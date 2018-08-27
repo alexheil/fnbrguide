@@ -45,7 +45,7 @@
                 <%= link_to group.title, category_group_path(group.category.slug, group) %>
               </div>
               <div class="author-text padding-horizontal">
-                <%= group.admin.name %> posted <%= time_ago_in_words(group.created_at) %> ago.
+                Posted <%= time_ago_in_words(group.created_at) %> ago.
               </div>
               <div class="tagline-text">
                 <%= group.tagline %>
