@@ -1,0 +1,58 @@
+<%= provide(:title, sanitize(@group.title)) %>
+
+<%= render 'categories/partials/twitter_cards' %>
+
+<%= link_to "Create New Post", new_category_group_post_path(@category, @group) if admin_signed_in? %>
+<%= link_to "Edit Group", edit_category_group_path(@category, @group) if admin_signed_in? %>
+<%= link_to "Delete", category_group_path, method: :delete  if admin_signed_in? %>
+
+
+<div class="full-width-container">
+  <div class="container">
+
+    <div class="category-title">
+      <%= @category.title %>
+    </div>
+
+    <div class="content group-container">
+      <div class="front-container">
+        <div class="one-space">
+          <img class="image-border" srcset="<%= @group.image %>" width="100%" height="auto" />
+        </div>
+        <div class="bottom-left">
+          <%= link_to @group.image_source, @group.image_source_link, class: "second-link" if @group.image_source.present? %>
+        </div>
+      </div>
+
+      <div class="post-title padding-horizontal padding-vertical">
+        <%= @group.title %>
+      </div>
+
+      <div class="author-text padding-horizontal">
+        <%= @group.admin.name %> posted <%= time_ago_in_words(@group.created_at) %> ago.
+      </div>
+
+      <div class="best padding-horizontal">
+        <%= sanitize(@group.content) %>
+      </div>
+
+      <div class="padding-vertical padding-horizontal">
+        <%= link_to @group.anchor, @group.link if @group.link.present? %>
+      </div>
+
+      <%= render 'partials/ad_trash' %>
+
+      <% if @group.posts.any? %>
+        <div class="padding-horizontal padding-vertical">
+          <%= link_to "Get Started", category_group_post_path(@category, @group, @group.posts.first), class: "first-post" %>
+        </div>
+      <% end %>
+
+      <%= render 'categories/partials/share_buttons' %>
+
+    </div>
+
+    <%= render 'categories/partials/keep_up' %>
+
+  </div>
+</div>

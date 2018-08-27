@@ -1,0 +1,51 @@
+<%= provide(:title, "Categories") %>
+
+<div class="full-width-container">
+  <div class="container">
+
+    <sidebar class="home-sidebar">
+
+      <%= render 'categories/partials/home_keep_up' %>
+
+      <% if @categories.any? %>
+        <div class="side-nav">
+          <ul>
+            <% @categories.each do |category| %>
+              <li class="side-nav-links"><%= link_to category.title, category_path(category) %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </sidebar>
+
+    <main class="home-content">
+
+      <div class="three-space post-title">
+        Categories
+      </div>
+
+      <% @categories.each do |category| %>
+        <div class="five-space group-container">
+          <div class="one-column">
+            <%= link_to(category_path(category)) do %>
+              <img class="thumbnail-image" srcset="<%= category.image %>" width="100%" height="auto" />
+            <% end %>
+          </div>
+          <div class="second-column">
+            <div class="two-space group-list-title">
+              <%= link_to category.title, category_path(category) %>
+            </div>
+            <% category.groups.take(3).each do |group| %>
+              <% if group.published == true %>
+                <div class="one-space padding-horizontal">
+                  <%= link_to group.title, category_group_path(category, group) %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </main>
+
+  </div>
+</div>

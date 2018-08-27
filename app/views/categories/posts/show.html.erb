@@ -1,0 +1,56 @@
+<%= provide(:title, sanitize(@post.title)) %>
+
+<%= render 'categories/partials/twitter_cards' %>
+
+<%= link_to "Edit Post", edit_category_group_post_path(@category, @group, @post) if admin_signed_in? %>
+<%= link_to "Delete", category_group_post_path, method: :delete if admin_signed_in? %>
+
+<div class="full-width-container">
+  <div class="container">
+
+    <div class="category-title">
+      <%= @category.title %>
+    </div>
+    <div class="group-title">
+      <%= @group.title %>
+    </div>
+
+    <div class="content group-container">
+
+      <%= render 'categories/partials/previous_next' %>
+
+      <%= render 'partials/ad_trash' %>
+
+      <div class="front-container">
+        <div class="one-space">
+          <%= image_tag(@post.image, height: '100%', width: '100%' ) %>
+        </div>
+        <div class="bottom-left">
+          <%= link_to @post.image_source, @post.image_source_link, class: "second-link" if @post.image_source.present? %>
+        </div>
+      </div>
+
+      <div class="post-title padding-horizontal padding-vertical">
+        <%= @post.title %>
+      </div>
+
+      <div class="best padding-horizontal">
+        <%= sanitize(@post.content) %>
+      </div>
+
+      <div class="padding-vertical padding-horizontal">
+        <%= link_to @post.anchor, @post.link if @post.link.present? %>
+      </div>
+
+      <%= render 'partials/ad_trash' %>
+
+      <%= render 'categories/partials/previous_next' %>
+
+      <%= render 'categories/partials/share_buttons' %>
+
+    </div>
+
+    <%= render 'categories/partials/keep_up' %>
+
+  </div>
+</div>
