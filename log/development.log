@@ -1,0 +1,883 @@
+Started GET "/" for 127.0.0.1 at 2018-08-27 11:50:08 -0400
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.6) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.6) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.6) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.6) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.6) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.6) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.2ms)
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateAdmins (20171129013105)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "admins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "name" varchar DEFAULT '' NOT NULL, "slug" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_name" ON "admins" ("name")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_name' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_slug" ON "admins" ("slug")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_slug' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_slug' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_name' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129013105"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCategories (20171129014041)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "image" varchar, "anchor" varchar DEFAULT '', "link" varchar DEFAULT '', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_categories_on_slug" ON "categories" ("slug")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129014041"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGroups (20171129014050)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category_id" integer, "admin_id" integer, "title" varchar, "tagline" varchar, "image" varchar, "image_source" varchar DEFAULT '', "image_source_link" varchar DEFAULT '', "anchor" varchar DEFAULT '', "link" varchar DEFAULT '', "content" text, "published" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_groups_on_category_id" ON "groups" ("category_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_groups_on_admin_id" ON "groups" ("admin_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_on_admin_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_groups_on_slug" ON "groups" ("slug")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129014050"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePosts (20171129014056)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "group_id" integer, "number" integer, "title" varchar, "image" varchar, "image_source" varchar DEFAULT '', "image_source_link" varchar DEFAULT '', "anchor" varchar DEFAULT '', "link" varchar DEFAULT '', "embed" varchar DEFAULT '', "content" text, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_group_id" ON "posts" ("group_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_group_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_slug" ON "posts" ("slug")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129014056"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateEmails (20171205174700)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "emails" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171205174700"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-27 15:50:19.686673"], ["updated_at", "2018-08-27 15:50:19.686673"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_slug' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_slug' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_name' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_slug' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_slug' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_on_slug' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_on_slug' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_on_admin_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_slug' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_slug' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_group_id' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2018-08-27 11:50:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."published" = ? ORDER BY created_at desc LIMIT ?[0m  [["published", "t"], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <div class="front-container">
+    2:   <div class="black-front">
+    3:     <img class="black-background black-front" srcset="<%= @first_group.image %>" width="100%" height="auto" />
+    4:   </div>
+    5:   <div class="centered medium-text">
+    6:     <%= link_to @first_group.title, category_group_path(Category.find(@first_group.category_id).slug, @first_group), class: "second-link" %>
+  
+app/views/static_pages/home.html.erb:3:in `_app_views_static_pages_home_html_erb__1674170557625889388_70235223256200'
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.2ms)
+Started GET "/admins/sign_up" for 127.0.0.1 at 2018-08-27 11:50:50 -0400
+Processing by Admins::RegistrationsController#new as HTML
+  Rendering admins/registrations/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.8ms)
+  Rendered admins/registrations/new.html.erb within layouts/application (26.5ms)
+  Rendered partials/_twitter_cards.html.erb (0.7ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.9ms)
+  Rendered partials/_footer.html.erb (1.0ms)
+Completed 200 OK in 413ms (Views: 399.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/admins" for 127.0.0.1 at 2018-08-27 11:51:07 -0400
+Processing by Admins::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nVoJv/V0diPmXES1HqY5rMz2fkIPz7uLfWO16GO6AI3LNKY7750m2oIg28whCI4S2iQgkOxZH4OoGeVnLU+tYg==", "admin"=>{"name"=>"Alex Heil", "email"=>"aheil4250@aol.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE ("admins"."id" IS NOT NULL) AND "admins"."slug" = ? LIMIT ?[0m  [["slug", "alex-heil"], ["LIMIT", 1]]
+  [1m[36mAdmin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "aheil4250@aol.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "name", "slug", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "aheil4250@aol.com"], ["encrypted_password", "$2a$11$oIk/2R38uIGPqwdFZJjXHeCVVlkqPM4AN7deiH7zhsO93iuAJWRe2"], ["name", "Alex Heil"], ["slug", "alex-heil"], ["created_at", "2018-08-27 15:51:07.818440"], ["updated_at", "2018-08-27 15:51:07.818440"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "admins" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "admins"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-08-27 15:51:07.820399"], ["last_sign_in_at", "2018-08-27 15:51:07.820399"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-08-27 15:51:07.820860"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 226ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-27 11:51:07 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."published" = ? ORDER BY created_at desc LIMIT ?[0m  [["published", "t"], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <div class="front-container">
+    2:   <div class="black-front">
+    3:     <img class="black-background black-front" srcset="<%= @first_group.image %>" width="100%" height="auto" />
+    4:   </div>
+    5:   <div class="centered medium-text">
+    6:     <%= link_to @first_group.title, category_group_path(Category.find(@first_group.category_id).slug, @first_group), class: "second-link" %>
+  
+app/views/static_pages/home.html.erb:3:in `_app_views_static_pages_home_html_erb__1674170557625889388_70235294143940'
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.7ms)
+Started GET "/categories/new" for 127.0.0.1 at 2018-08-27 11:51:13 -0400
+Processing by Categories::CategoriesController#new as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categories/categories/new.html.erb within layouts/application
+  Rendered partials/_category_errors.html.erb (0.4ms)
+  Rendered categories/categories/new.html.erb within layouts/application (3.1ms)
+  Rendered partials/_twitter_cards.html.erb (0.3ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.5ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 28ms (Views: 19.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2018-08-27 11:51:23 -0400
+Processing by Categories::CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XHsE2b7W2TuFerZqaf9WRUVS6FgPvq+OJLAiN9lALE1pSvQo/P+Aj3Nqa0PQNjdqnKYO0o44jR7EVNtScF3uUw==", "category"=>{"title"=>"Programming", "image"=>"https://i.imgur.com/6VvV1L3.jpg", "anchor"=>"geheh", "link"=>"heheheh"}, "commit"=>"Create Category"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE ("categories"."id" IS NOT NULL) AND "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "image", "anchor", "link", "slug", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Programming"], ["image", "https://i.imgur.com/6VvV1L3.jpg"], ["anchor", "geheh"], ["link", "heheheh"], ["slug", "programming"], ["created_at", "2018-08-27 15:51:23.070219"], ["updated_at", "2018-08-27 15:51:23.070219"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/categories/programming
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/categories/programming" for 127.0.0.1 at 2018-08-27 11:51:23 -0400
+Processing by Categories::CategoriesController#show as HTML
+  Parameters: {"id"=>"programming"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/categories/show.html.erb within layouts/application
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_home_keep_up.html.erb (8.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["category_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered categories/categories/show.html.erb within layouts/application (22.3ms)
+  Rendered partials/_twitter_cards.html.erb (0.4ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.5ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 50ms (Views: 36.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/categories/programming/groups/new" for 127.0.0.1 at 2018-08-27 11:52:04 -0400
+Processing by Categories::GroupsController#new as HTML
+  Parameters: {"category_id"=>"programming"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/groups/new.html.erb within layouts/application
+  Rendered partials/_group_errors.html.erb (0.4ms)
+  Rendered categories/groups/new.html.erb within layouts/application (7.8ms)
+  Rendered partials/_twitter_cards.html.erb (0.3ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.6ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 37ms (Views: 24.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cities/buffalo-new-york-united-states" for 127.0.0.1 at 2018-08-27 11:52:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/cities/buffalo-new-york-united-states"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered collection of /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [46 times] (10.0ms)
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendering /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/alexheil/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (90.4ms)
+Started POST "/categories/programming/groups" for 127.0.0.1 at 2018-08-27 11:53:26 -0400
+Processing by Categories::GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QBiBmEEUQnrDuJzXxtqB+vw6xYmtlu4qy7IEHf1GHd2BRQj1eb8tsbcgjHLzFs/4+MclRtgw/QAcQE3EYyvpLw==", "group"=>{"title"=>"hey", "tagline"=>"heyyy", "image"=>"https://i.imgur.com/39XGp0z.jpg", "image_source"=>"source", "image_source_link"=>"https://i.imgur.com/39XGp0z.jpg", "anchor"=>"this is anchor text", "link"=>"https://i.imgur.com/39XGp0z.jpg", "content"=>"content and stuff ok", "published"=>"1"}, "commit"=>"Create Group", "category_id"=>"programming"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "groups" WHERE ("groups"."id" IS NOT NULL) AND "groups"."slug" = ? LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "groups" ("category_id", "admin_id", "title", "tagline", "image", "image_source", "image_source_link", "anchor", "link", "content", "published", "slug", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["admin_id", 1], ["title", "hey"], ["tagline", "heyyy"], ["image", "https://i.imgur.com/39XGp0z.jpg"], ["image_source", "source"], ["image_source_link", "https://i.imgur.com/39XGp0z.jpg"], ["anchor", "this is anchor text"], ["link", "https://i.imgur.com/39XGp0z.jpg"], ["content", "content and stuff ok"], ["published", "t"], ["slug", "hey"], ["created_at", "2018-08-27 15:53:26.249001"], ["updated_at", "2018-08-27 15:53:26.249001"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/categories/programming/groups/hey
+Completed 302 Found in 13ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/categories/programming/groups/hey" for 127.0.0.1 at 2018-08-27 11:53:26 -0400
+Processing by Categories::GroupsController#show as HTML
+  Parameters: {"category_id"=>"programming", "id"=>"hey"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/groups/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (0.7ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_ad_trash.html.erb (0.3ms)
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."group_id" = ? LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_share_buttons.html.erb (0.5ms)
+  Rendered categories/partials/_keep_up.html.erb (0.8ms)
+  Rendered categories/groups/show.html.erb within layouts/application (16.4ms)
+  Rendered partials/_twitter_cards.html.erb (0.4ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.5ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/programming/groups/hey/posts/new" for 127.0.0.1 at 2018-08-27 11:54:18 -0400
+Processing by Categories::PostsController#new as HTML
+  Parameters: {"category_id"=>"programming", "group_id"=>"hey"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/posts/new.html.erb within layouts/application
+  Rendered partials/_post_errors.html.erb (0.4ms)
+  Rendered categories/posts/new.html.erb within layouts/application (3.7ms)
+  Rendered partials/_twitter_cards.html.erb (0.4ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.3ms)
+  Rendered partials/_header.html.erb (0.7ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 35ms (Views: 20.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/categories/programming/groups/hey/posts" for 127.0.0.1 at 2018-08-27 11:54:47 -0400
+Processing by Categories::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iFb20bbYUKKhhL0RNETuaLi/ESIKPgsop1ctTMlgeUzm2lvCOo0WEUmblXKaMUiex25/RYhpmDaeZHq4hcm41w==", "post"=>{"number"=>"1", "title"=>"Leviathan", "image"=>"http://animals.sandiegozoo.org/sites/default/files/2016-10/plants_hero_cactusB.jpg", "image_source"=>"source", "image_source_link"=>"https://i.imgur.com/39XGp0z.jpg", "anchor"=>"anchor text", "link"=>"https://i.imgur.com/39XGp0z.jpg", "embed"=>"video?", "content"=>"content and stuff"}, "commit"=>"Create Post", "category_id"=>"programming", "group_id"=>"hey"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE ("posts"."id" IS NOT NULL) AND "posts"."slug" = ? LIMIT ?[0m  [["slug", "leviathan"], ["LIMIT", 1]]
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."number" = ? AND "posts"."group_id" = ? LIMIT ?[0m  [["number", 1], ["group_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("group_id", "number", "title", "image", "image_source", "image_source_link", "anchor", "link", "embed", "content", "slug", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["group_id", 1], ["number", 1], ["title", "Leviathan"], ["image", "http://animals.sandiegozoo.org/sites/default/files/2016-10/plants_hero_cactusB.jpg"], ["image_source", "source"], ["image_source_link", "https://i.imgur.com/39XGp0z.jpg"], ["anchor", "anchor text"], ["link", "https://i.imgur.com/39XGp0z.jpg"], ["embed", "video?"], ["content", "content and stuff"], ["slug", "leviathan"], ["created_at", "2018-08-27 15:54:47.817316"], ["updated_at", "2018-08-27 15:54:47.817316"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/categories/programming/groups/hey
+Completed 302 Found in 11ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/categories/programming/groups/hey" for 127.0.0.1 at 2018-08-27 11:54:47 -0400
+Processing by Categories::GroupsController#show as HTML
+  Parameters: {"category_id"=>"programming", "id"=>"hey"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/groups/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (0.7ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_ad_trash.html.erb (0.3ms)
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."group_id" = ? LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_share_buttons.html.erb (0.5ms)
+  Rendered categories/partials/_keep_up.html.erb (1.1ms)
+  Rendered categories/groups/show.html.erb within layouts/application (13.2ms)
+  Rendered partials/_twitter_cards.html.erb (0.4ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.5ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/programming/groups/hey/posts/leviathan" for 127.0.0.1 at 2018-08-27 11:55:21 -0400
+Processing by Categories::PostsController#show as HTML
+  Parameters: {"category_id"=>"programming", "group_id"=>"hey", "id"=>"leviathan"}
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "leviathan"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/posts/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (0.7ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? ORDER BY id DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number < 1) ORDER BY "posts"."number" DESC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number > 1) ORDER BY "posts"."number" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? AND (id > 1) ORDER BY id DESC, "groups"."id" ASC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_previous_next.html.erb (7.0ms)
+  Rendered partials/_ad_trash.html.erb (0.3ms)
+  Rendered partials/_ad_trash.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number < 1) ORDER BY "posts"."number" DESC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number > 1) ORDER BY "posts"."number" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? AND (id > 1) ORDER BY id DESC, "groups"."id" ASC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_previous_next.html.erb (1.9ms)
+  Rendered categories/partials/_share_buttons.html.erb (0.5ms)
+  Rendered categories/partials/_keep_up.html.erb (1.7ms)
+  Rendered categories/posts/show.html.erb within layouts/application (23.3ms)
+  Rendered partials/_twitter_cards.html.erb (0.4ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.7ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 48ms (Views: 41.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/categories/programming/groups/hey" for 127.0.0.1 at 2018-08-27 11:55:26 -0400
+Processing by Categories::GroupsController#show as HTML
+  Parameters: {"category_id"=>"programming", "id"=>"hey"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/groups/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (0.7ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_ad_trash.html.erb (0.3ms)
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."group_id" = ? LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_share_buttons.html.erb (0.4ms)
+  Rendered categories/partials/_keep_up.html.erb (1.1ms)
+  Rendered categories/groups/show.html.erb within layouts/application (13.1ms)
+  Rendered partials/_twitter_cards.html.erb (0.4ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.6ms)
+  Rendered partials/_footer.html.erb (0.6ms)
+Completed 200 OK in 35ms (Views: 30.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/programming/groups/hey" for 127.0.0.1 at 2018-08-27 11:58:20 -0400
+Processing by Categories::GroupsController#show as HTML
+  Parameters: {"category_id"=>"programming", "id"=>"hey"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/groups/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (0.8ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_ad_trash.html.erb (0.4ms)
+  [1m[36mPost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."group_id" = ? LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_share_buttons.html.erb (0.5ms)
+  Rendered categories/partials/_keep_up.html.erb (1.0ms)
+  Rendered categories/groups/show.html.erb within layouts/application (14.3ms)
+  Rendered partials/_twitter_cards.html.erb (0.4ms)
+  Rendered partials/_shim.html.erb (0.4ms)
+  Rendered partials/_analytics.html.erb (0.3ms)
+  Rendered partials/_header.html.erb (0.9ms)
+  Rendered partials/_footer.html.erb (0.7ms)
+Completed 200 OK in 41ms (Views: 34.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories/programming/groups/hey" for 127.0.0.1 at 2018-08-27 11:58:39 -0400
+Processing by Categories::GroupsController#show as HTML
+  Parameters: {"category_id"=>"programming", "id"=>"hey"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/groups/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (0.9ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_ad_trash.html.erb (0.3ms)
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."group_id" = ? LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_share_buttons.html.erb (0.6ms)
+  Rendered categories/partials/_keep_up.html.erb (1.2ms)
+  Rendered categories/groups/show.html.erb within layouts/application (15.3ms)
+  Rendered partials/_twitter_cards.html.erb (0.4ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.5ms)
+  Rendered partials/_footer.html.erb (0.6ms)
+Completed 200 OK in 159ms (Views: 154.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories/programming/groups/hey" for 127.0.0.1 at 2018-08-27 11:58:53 -0400
+Processing by Categories::GroupsController#show as HTML
+  Parameters: {"category_id"=>"programming", "id"=>"hey"}
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/groups/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (0.7ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_ad_trash.html.erb (0.2ms)
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."group_id" = ? LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_share_buttons.html.erb (0.5ms)
+  Rendered categories/partials/_keep_up.html.erb (1.0ms)
+  Rendered categories/groups/show.html.erb within layouts/application (12.6ms)
+  Rendered partials/_twitter_cards.html.erb (0.4ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.6ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 142ms (Views: 138.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories/programming/groups/hey/posts/leviathan" for 127.0.0.1 at 2018-08-27 11:59:11 -0400
+Processing by Categories::PostsController#show as HTML
+  Parameters: {"category_id"=>"programming", "group_id"=>"hey", "id"=>"leviathan"}
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "leviathan"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/posts/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (1.0ms)
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? ORDER BY id DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number < 1) ORDER BY "posts"."number" DESC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number > 1) ORDER BY "posts"."number" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? AND (id > 1) ORDER BY id DESC, "groups"."id" ASC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_previous_next.html.erb (5.3ms)
+  Rendered partials/_ad_trash.html.erb (0.3ms)
+  Rendered partials/_ad_trash.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number < 1) ORDER BY "posts"."number" DESC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number > 1) ORDER BY "posts"."number" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? AND (id > 1) ORDER BY id DESC, "groups"."id" ASC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_previous_next.html.erb (1.8ms)
+  Rendered categories/partials/_share_buttons.html.erb (0.7ms)
+  Rendered categories/partials/_keep_up.html.erb (1.3ms)
+  Rendered categories/posts/show.html.erb within layouts/application (21.4ms)
+  Rendered partials/_twitter_cards.html.erb (0.3ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.5ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 42ms (Views: 35.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/categories/programming/groups/hey/posts/leviathan" for 127.0.0.1 at 2018-08-27 12:01:40 -0400
+Processing by Categories::PostsController#show as HTML
+  Parameters: {"category_id"=>"programming", "group_id"=>"hey", "id"=>"leviathan"}
+  [1m[36mGroup Load (5.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "leviathan"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/posts/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (0.7ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? ORDER BY id DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number < 1) ORDER BY "posts"."number" DESC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number > 1) ORDER BY "posts"."number" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? AND (id > 1) ORDER BY id DESC, "groups"."id" ASC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_previous_next.html.erb (6.6ms)
+  Rendered partials/_ad_trash.html.erb (0.3ms)
+  Rendered partials/_ad_trash.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number < 1) ORDER BY "posts"."number" DESC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number > 1) ORDER BY "posts"."number" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? AND (id > 1) ORDER BY id DESC, "groups"."id" ASC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_previous_next.html.erb (2.1ms)
+  Rendered categories/partials/_share_buttons.html.erb (0.5ms)
+  Rendered categories/partials/_keep_up.html.erb (0.9ms)
+  Rendered categories/posts/show.html.erb within layouts/application (22.2ms)
+  Rendered partials/_twitter_cards.html.erb (0.3ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.5ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 37.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/categories/programming/groups/hey/posts/leviathan" for 127.0.0.1 at 2018-08-27 12:02:34 -0400
+Processing by Categories::PostsController#show as HTML
+  Parameters: {"category_id"=>"programming", "group_id"=>"hey", "id"=>"leviathan"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "leviathan"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/posts/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (0.8ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? ORDER BY id DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number < 1) ORDER BY "posts"."number" DESC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number > 1) ORDER BY "posts"."number" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? AND (id > 1) ORDER BY id DESC, "groups"."id" ASC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_previous_next.html.erb (5.6ms)
+  Rendered partials/_ad_trash.html.erb (0.3ms)
+  Rendered partials/_ad_trash.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number < 1) ORDER BY "posts"."number" DESC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number > 1) ORDER BY "posts"."number" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? AND (id > 1) ORDER BY id DESC, "groups"."id" ASC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_previous_next.html.erb (2.5ms)
+  Rendered categories/partials/_share_buttons.html.erb (0.5ms)
+  Rendered categories/partials/_keep_up.html.erb (0.9ms)
+  Rendered categories/posts/show.html.erb within layouts/application (21.2ms)
+  Rendered partials/_twitter_cards.html.erb (0.3ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.4ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 41ms (Views: 36.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/categories/programming/groups/hey/posts/leviathan" for 127.0.0.1 at 2018-08-27 12:03:34 -0400
+Processing by Categories::PostsController#show as HTML
+  Parameters: {"category_id"=>"programming", "group_id"=>"hey", "id"=>"leviathan"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "leviathan"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/posts/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (0.7ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? ORDER BY id DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number < 1) ORDER BY "posts"."number" DESC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number > 1) ORDER BY "posts"."number" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? AND (id > 1) ORDER BY id DESC, "groups"."id" ASC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_previous_next.html.erb (5.4ms)
+  Rendered partials/_ad_trash.html.erb (0.3ms)
+  Rendered partials/_ad_trash.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number < 1) ORDER BY "posts"."number" DESC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? AND (number > 1) ORDER BY "posts"."number" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? AND (id > 1) ORDER BY id DESC, "groups"."id" ASC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_previous_next.html.erb (2.0ms)
+  Rendered categories/partials/_share_buttons.html.erb (0.5ms)
+  Rendered categories/partials/_keep_up.html.erb (1.1ms)
+  Rendered categories/posts/show.html.erb within layouts/application (21.5ms)
+  Rendered partials/_twitter_cards.html.erb (0.3ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.6ms)
+  Rendered partials/_footer.html.erb (0.6ms)
+Completed 200 OK in 42ms (Views: 37.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-27 12:03:36 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."published" = ? ORDER BY created_at desc LIMIT ?[0m  [["published", "t"], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_home_keep_up.html.erb (1.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."published" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["published", "t"], ["LIMIT", 10], ["OFFSET", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (14.4ms)
+  Rendered partials/_twitter_cards.html.erb (0.3ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_header.html.erb (1.5ms)
+  Rendered partials/_footer.html.erb (0.8ms)
+Completed 200 OK in 37ms (Views: 32.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/categories/programming/groups/hey" for 127.0.0.1 at 2018-08-27 12:03:42 -0400
+Processing by Categories::GroupsController#show as HTML
+  Parameters: {"category_id"=>"programming", "id"=>"hey"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."slug" = ? ORDER BY id DESC LIMIT ?[0m  [["slug", "hey"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "programming"], ["LIMIT", 1]]
+  Rendering categories/groups/show.html.erb within layouts/application
+  Rendered categories/partials/_twitter_cards.html.erb (0.9ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_ad_trash.html.erb (0.3ms)
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."group_id" = ? LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."group_id" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["group_id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_share_buttons.html.erb (0.6ms)
+  Rendered categories/partials/_keep_up.html.erb (1.0ms)
+  Rendered categories/groups/show.html.erb within layouts/application (14.9ms)
+  Rendered partials/_twitter_cards.html.erb (0.5ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.7ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 37ms (Views: 30.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2018-08-27 12:03:47 -0400
+Processing by Categories::CategoriesController#new as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categories/categories/new.html.erb within layouts/application
+  Rendered partials/_category_errors.html.erb (0.4ms)
+  Rendered categories/categories/new.html.erb within layouts/application (2.8ms)
+  Rendered partials/_twitter_cards.html.erb (0.3ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  Rendered partials/_header.html.erb (0.6ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 23ms (Views: 19.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2018-08-27 12:03:49 -0400
+Processing by Categories::CategoriesController#index as HTML
+  Rendering categories/categories/index.html.erb within layouts/application
+  Rendered categories/partials/_home_keep_up.html.erb (1.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."category_id" = ? ORDER BY id DESC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 3]]
+  Rendered categories/categories/index.html.erb within layouts/application (6.0ms)
+  Rendered partials/_twitter_cards.html.erb (0.4ms)
+  Rendered partials/_shim.html.erb (0.2ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_header.html.erb (1.9ms)
+  Rendered partials/_footer.html.erb (0.6ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-27 12:03:54 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."published" = ? ORDER BY created_at desc LIMIT ?[0m  [["published", "t"], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered categories/partials/_home_keep_up.html.erb (1.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."published" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["published", "t"], ["LIMIT", 10], ["OFFSET", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (7.2ms)
+  Rendered partials/_twitter_cards.html.erb (0.4ms)
+  Rendered partials/_shim.html.erb (0.3ms)
+  Rendered partials/_analytics.html.erb (0.2ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_header.html.erb (1.4ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 0.9ms)
+
+
